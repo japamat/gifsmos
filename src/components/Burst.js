@@ -125,7 +125,10 @@ class Burst extends Component {
                     value={exp.expressionIdx}
                     defaultValue={idx === exp.expressionIdx}
                   >
-                    {exp.latex.split('=').join(' = ')}
+                    {exp.latex
+                      .replace(/\\/g, '')
+                      .split('=')
+                      .join(' = ')}
                   </option>
                 );
               })}
